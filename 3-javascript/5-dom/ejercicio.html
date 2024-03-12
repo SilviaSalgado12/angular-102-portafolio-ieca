@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>JS & DOM</title>
+</head>
+
+<body>
+    <div style="display: flex">
+        <input type="text" id="inputEncabezado" placeholder="Ingresa el nuevo encabezado" style="width:70%;margin-bottom:10px" />
+    </div>
+    <div style="display: flex">
+        <button id="btnActualizacion" onClick="modificarEncabezado()" style="margin-right: 10px">Establecer Encabezado</button>
+        <button id="btnUndo" disabled>Encabezado Anterior</button>
+    </div>
+    <h1 id="encabezado">...</h1>
+
+   
+</body>
+<script>
+    /*
+    INSTRUCCIONES:
+    
+    1.  Codifica la función modificarEncabezado del botón "btnActualizacion" 
+        para que tome el valor del input "inputEncabezado" para cambiar el h1 "encabezado"
+
+    2.  Valida que el valor del input no sea vacío, si esta vacío notifica al usuario con alert() de que 
+        el valor no puede ser vacío
+
+    3.  Agrega el evento `click` al botón "btnUndo", intenta codificar una función callback 
+        para que pueda realizar la función de establecer el encabezado a un título anterior
+
+    4.  Habilita el botón "btnUndo" una vez que se hayan establecido al menos 2 títulos
+            *   Puedes usar un contador para saber cuantas veces se han establecido
+                así podrás saber cuando desbloquear el botón
+    */
+
+    const btnUndo = document.getElementById('btnUndo');
+    const tituloEncabezado = document.getElementById('encabezado');
+    const inputEncabezado = document.getElementById("inputEncabezado");
+    let array = [];
+    var contador = 0;
+                    function modificarEncabezado() {
+                        /* Tu código aquí */
+                        //if para comparar si el valor del inputEncabezado esta vacio 
+                        if( inputEncabezado.value.trim().length !== 0) {
+                        document.getElementById('encabezado').innerHTML = inputEncabezado.value;      
+                                    guardaEncabezados(inputEncabezado);
+                                if(contador>=2){
+                                    //Valida si se ingresaron 2 o más encabezados 
+                                btnUndo.disabled = false
+                                }else{
+                                    btnUndo.disabled = true
+                                }
+                        }else{
+                                            btnUndo.disabled = true
+                                alert('Lo sentimos el valor no puede ser vacío')
+                        }
+                    }
+
+
+            function guardaEncabezados(inputEncabezado){
+                console.log(contador);
+            //Guarda los encabezados que se van tecleando en el input        
+                 array[contador]=inputEncabezado.value;
+                 //se suma 1 al contador para guardar el siguiente encabezado que se ingrese en la poscion siguiente
+                      contador= contador + 1;
+                      contador1 = array.length - 1;
+                      
+            }
+
+            function establecerEncabezado(){
+                //Valida que el contador este en su poscion 0 o mayor 
+                
+                contador1 = contador1 - 1;
+                console.log(contador1);
+                if(contador1>=0 ){
+                    
+                    
+                   // console.log(array[contador]);
+                    document.getElementById('encabezado').innerHTML =array[contador1] ;   
+                  }else{
+                    btnUndo.disabled = true
+                  }
+            }
+
+
+            btnUndo.addEventListener('click', ()=>{
+                establecerEncabezado()
+            })
+
+
+</script>
+</html>

@@ -17,7 +17,7 @@
         <ul>
             <li>
                 <!-- Completa la navegación -->
-                <a href="#">Acerca de</a>
+                <a href="acerca.html">Acerca de</a>
             </li>
         </ul>
     </nav>
@@ -27,12 +27,28 @@
         <!-- Completa el fomulario -->
         <form>
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="nombre" name="nombre" required><br>
         
             <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
+            <input type="text" id="apellido" name="apellido" required><br>
 
-            <!-- Agrega los inputs faltantes -->
+           <!--  Correo Electrónico (el input debe ser de tipo "email")_-->
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" required><br>
+            <!-- Contraseña (el input debe ser de tipo "password") -->
+          
+                <label for="contraseña">Contraseña:</label>
+                 <input type="password" id="contraseña" name="contraseña" required><br>
+            <!-- * _Fecha de Nacimiento (el input debe ser de tipo "date")_ -->
+            <label for="FechaNacimiento">Fecha nacimiento</label>
+            <input type="date" id="FechaNacimiento" name="FechaNacimiento" required><br>
+              <!--  * _Teléfono (el input debe ser de tipo "tel")_ -->
+               <label for="telefono">Teléfono:</label>
+               <input type="tel" id="telefono" name="telefono" required><br>
+                   <!--  * _Dirección (el input debe ser de tipo "textarea")_-->
+                   <label for="direccion">_Dirección</label>
+               <input type="texarea" id="direccion" name="direccion" required><br>
+               <button type="button" class="btn btn-primary">Registrar</button>
         </form>
     </main>
 

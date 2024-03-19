@@ -11,6 +11,7 @@
         "El grupo <propiedad_grupo> tienen <total_personas> miembros"
 */
 
+<<<<<<< HEAD
 const magios = new Grupo("Magios", ["Eduardo", "Carla", "Marcos", "Emmanuel", "Samara", "Paulina", "María", "Julio", "Alex", "Pedro", "Guillermo", "Hernán", "Eliot", "Israel", "Lucía"])
 
 // Constructor de Objetos "Grupo"
@@ -27,6 +28,15 @@ function agregarPersona(nombrepersona ){
     console.log(persona);
 
 }
+=======
+// Constructor de Objetos "Grupo"
+function Grupo(nombre, personas) {
+
+}
+
+const magios = new Grupo("Magios", ["Eduardo", "Carla", "Marcos", "Emmanuel", "Samara", "Paulina", "María", "Julio", "Alex", "Pedro", "Guillermo", "Hernán", "Eliot", "Israel", "Lucía"])
+
+>>>>>>> 2cb1ac9f4b00b041c58807ad6a7f6ee9e30e6d87
 // magios.mostrarResumen()
 // magios.agregarPersona("Manuel")
 // magios.agregarPersona("Irma")
